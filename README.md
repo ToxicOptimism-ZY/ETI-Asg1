@@ -10,6 +10,9 @@
   <li>
      Architecture diagram
   </li>
+  <li>
+     Structs
+  </li>
    <li>
     Passenger Microservice
   </li>
@@ -50,6 +53,51 @@ The simplificity of the assignment only requires for a single console app, rathe
   </a>
 </div>
 <br/>
+As seen here, passenger service, driver service and trip service are offered to provide RESTful Api Methods to the console application, each service has their own individual databases which is represented by the tables in the "asg1" database due to a lack of a DBMS and containerization.
+
+<!-- Structures -->
+## Structs
+These struct declarations are critical in understanding how the data is laid out, do note that PassengerID and DriverID are not defined as foreign keys in the database but are rather used as identifiers. Hence, there is no relations between the entities.
+
+<br/>
+type Passenger struct { <br/>
+	PassengerID  int <br/>
+	Username     string //Unique <br/>
+	Password     string //(Not Retrieved) <br/>
+	FirstName    string <br/>
+	LastName     string <br/>
+	MobileNo     string //varchar(8) <br/>
+	EmailAddress string //Unique <br/>
+} <br/>
+<br/>
+type Driver struct { <br/>
+	DriverID        int <br/>
+	Username        string //Unique <br/>
+	Password        string //(Not Retrieved) <br/>
+	FirstName       string <br/>
+	LastName        string <br/>
+	MobileNo        string //varchar(8) <br/>
+	EmailAddress    string //Unique <br/>
+	NRIC            string //1 letter, 7 digits, 1 checksum letter, Unique (Not Retrieved) <br/>
+	CarLicencePlate string //S, 2 letters, 4 numbers, 1 checksum letter, Unique <br/>
+	Status          string <br/>
+} <br/>
+<br/>
+type Trip struct { <br/>
+	TripID      int <br/>
+	PickUp      string //char(6) <br/>
+	DropOff     string //char(6) <br/>
+	DriverID    int <br/>
+	PassengerID int <br/>
+	Status      string <br/>
+} <br/>
+<br/>
+// struct to track user's current and past decisions <br/>
+type Session struct { <br/>
+	Usertype         string <br/>
+	BreadCrumbOption []string <br/>
+	BreadCrumbMenu   []string //Last item is the user's current menu location <br/>
+} <br/>
 
 <!-- Passenger Microservice -->
 ## Passenger Microservice
@@ -152,5 +200,34 @@ The simplificity of the assignment only requires for a single console app, rathe
     </li>
     <li>
         Run the query located in the file "CreateDatabase".sql, note that the 3 insert queries are intended to populate the database with sample data and is hence not neccessary.
+    </li>
+ </ol>
+
+ <!-- Running the program -->
+## Running the program
+<ol>
+    <li>
+        Set up the database if one has yet to do so (see above section)
+    </li>
+    <li>
+        Download the 'Asg1' folder from the repository and store it under your go language's src folder. (Ensure you have the relevant extensions for go)
+    </li>
+    <li>
+        Open up 4 seperate command prompts in visual studio code
+    </li>
+    <li>
+        For the first command prompt, change the directory to the 'PassengerService' folder i.e 'cd src/Asg1/PassengerService'
+    </li>
+    <li>
+        For the second command prompt, change the directory to the 'DriverService' folder i.e 'cd src/Asg1/DriverService'
+    </li>
+    <li>
+        For the third command prompt, change the directory to the 'TripService' folder i.e 'cd src/Asg1/TripService'
+    </li>
+    <li>
+        For the fourth command prompt, change the directory to the 'Console' folder i.e 'cd src/Asg1/Console'
+    </li>
+    <li>
+        Run the command line 'go run main.go' for all the first three command prompts before running the same line for the 'Console' command prompt. This is to ensure that           the three services are deployed and ready to listen  to the API calls from the Console. 
     </li>
  </ol>
