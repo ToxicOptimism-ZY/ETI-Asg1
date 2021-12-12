@@ -42,7 +42,7 @@ Due to the nature of the assignment, the microservices are deployed locally with
 
 Through tactical domain driven design, persistant entities such as trips, passengers and drivers are recognized. It is also noted that no stand alone value objects have been identified. Due to the simplicity of the assignment, no further aggregation is neccessary. 
 
-The simplificity of the assignment only requires for a single console app, rather than dedicated console micro services for the passenger and driver. Furthermore, it is notable that the all services are designed to be cohesive and loosely coupled, with much of the api http methods being for targeted purposes as well through the use of parameters. All http calls without the neccessary parameters will be rejected as a part of "404 Required parameters not found".
+The simplificity of the assignment only requires for a single console app, rather than dedicated console micro services for the passenger and driver. Furthermore, it is notable that the all services are designed to be cohesive and loosely coupled, with much of the api http methods being for targeted purposes as well through the use of parameters. All http calls without their neccessary parameters will be rejected as a part of "404 Required parameters not found".
 
 <!-- ARCHITECTURE DIAGRAM -->
 ## Architecture Diagram
@@ -127,7 +127,7 @@ type Session struct { <br/>
  
  <!-- Driver Microservice -->
 ## Driver Microservice
-
+Note for list item 2 and 3, due to it having the same url and method without their query strings, a helper function helps recognize the different combination of parameters passed in and triggers the appropriate function. <br/>
 <ol>
     <li>
         POST: /api/v1/drivers <br />
@@ -157,7 +157,7 @@ type Session struct { <br/>
  
 <!-- Trip Microservice -->
 ## Trip Microservice
-
+Note for list item 2, 3 and 4, due to it having the same url and method without their query strings, a helper function helps recognize the different combination of parameters passed in and triggers the appropriate function. <br/>
 <ol>
     <li>
         POST: /api/v1/trips <br />
