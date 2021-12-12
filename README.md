@@ -38,7 +38,7 @@ Hi, I am Yap Zhao Yi, the developer of this repository, the codes provided are i
 
 <!-- DESIGN CONSIDERATIONS -->
 ## Design Considerations
-Due to the nature of the assignment, the microservices are deployed locally without containerization, hence microservices while optimally displayed in as seperate packages are all written under main to allow visual studio code to recognize it as an executable. However, to account for this, go modules have been initalized as part of each microservice. Additionally, due to a lack of containerization and in turn a dedicated DBMS, a single database is also utilized despite seperate databases being more preferable when implementing micro services.
+Due to the nature of the assignment, the microservices are deployed locally without containerization, hence microservices while optimally deployed as seperate packages to minimize dependencies, are all instead written under main to allow visual studio code to recognize it as an executable. However, to account for this, go modules have been initalized as part of each microservice. Additionally, due to a lack of containerization and in turn a dedicated DBMS, a single database is also utilized despite seperate databases being more preferable when implementing micro services.
 
 Through tactical domain driven design, persistant entities such as trips, passengers and drivers are recognized. It is also noted that no stand alone value objects have been identified. Due to the simplicity of the assignment, no further aggregation is neccessary. 
 
