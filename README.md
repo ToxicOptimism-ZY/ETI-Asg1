@@ -46,7 +46,7 @@ The simplificity of the assignment only requires for a single console app, rathe
 <br />
 <div align="center">
   <a href="https://github.com/ToxicOptimism-ZY/ETI-Asg1">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="architecture.png" alt="Logo" width="755" height="427">
   </a>
 </div>
 <br/>
