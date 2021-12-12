@@ -110,7 +110,8 @@ type Session struct { <br/>
     <li>
         GET: /api/v1/passengers?username={username}&password={password} <br />
         Gets a passenger account based on username and password provided
-    </li>
+    </li> <br/>
+	The following are for a single instance for passenger defined by their passenger id: <br/>
     <li>
         GET: /api/v1/passengers/{passengerid} <br />
         Gets passenger account with the passenger id provided
@@ -136,11 +137,12 @@ Note for list item 2 and 3, due to it having the same url and method without the
     <li>
         GET: /api/v1/drivers?username={username}&password={password} <br />
         Gets a driver account based on username and password provided <br />
-    </li>
+    </li> 
      <li>
         GET: /api/v1/drivers?status={status} <br />
         Gets all driver accounts with the status provided <br />
-    </li>
+    </li> <br/>
+	The following are for a single instance for driver defined by their driver id: <br/>
     <li>
         GET: /api/v1/drivers/{driverid} <br />
         Gets driver account with the driver id provided <br />
@@ -175,6 +177,8 @@ Note for list item 2, 3 and 4, due to it having the same url and method without 
         GET: /api/v1/trips?passengerid={passengerid} <br />
         Gets a passenger's trip history (in chronological order)
     </li>
+	<br/>
+	The following are for a single instance for trip defined by trip passenger id: <br/> <br/>
     <li>
         GET: /api/v1/trips/{tripid} <br />
         Gets trip record with the trip id provided <br />
